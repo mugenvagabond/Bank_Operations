@@ -77,8 +77,8 @@ def format_data(data):
         recipient_info = f"{recipient_bill[:4]} {recipient_bill[4:6]}** **** {recipient_bill[-4:]}"
 
         formatted_data.append(f"""
-        {date} {description}
-        {sender_info} {sender_bill} {from_arrow} {recipient_info}
-        {amount} {currency} """)
+{date} {description}
+{sender_info} {sender_bill} {from_arrow} {recipient_info}
+{amount} {currency} """)
     return formatted_data
 
