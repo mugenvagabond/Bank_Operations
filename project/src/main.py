@@ -5,12 +5,12 @@ def main():
     print('Получение данных из файла...', end='')
     data = get_data()
     if data:
-        print('\n---Данные получены---')
+        print('\n---Данные получены---\n')
 
     print('Фильтрация данных...', end='')
     data = filter_data(data)
     if data:
-        print('\n---Данные отфильтрованы---')
+        print('\n---Данные отфильтрованы---\n')
 
     print('Сортировка данных...', end='')
     data = sort_data(data)
