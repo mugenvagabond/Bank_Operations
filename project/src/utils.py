@@ -23,9 +23,9 @@ def filter_data(data):
     :param data:
     :return: data
     """
-    filtered_data = [x for x in data if 'state' in x and x['state'] == 'EXECUTED']
+    data = [x for x in data if 'state' in x and x['state'] == 'EXECUTED']
     time.sleep(0.8)
-    return filtered_data
+    return data
 
 
 def sorted_key(x):
@@ -44,9 +44,9 @@ def sort_data(data):
     :param data:
     :return: data[:5]
     """
-    sorted_data = sorted(data, key=sorted_key, reverse=True)
+    data = sorted(data, key=sorted_key, reverse=True)
     time.sleep(0.8)
-    return sorted_data[:5]
+    return data[:5]
 
 
 def format_data(data):
