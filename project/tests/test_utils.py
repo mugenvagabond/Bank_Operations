@@ -92,3 +92,7 @@ def test_get_data():
         "from": "Maestro 1596837868705199",
         "to": "Счет 64686473678894779589"
     }]
+
+
+def test_format_data(test_data):
+    pass
