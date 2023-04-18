@@ -3,13 +3,13 @@ from datetime import datetime
 import time
 
 
-def get_data():
+def get_data(filename):
     """
     Функция открывает json файл и преобразует данные из него в формате списка
     в переменную
     :return: data
     """
-    with open('operations.json', 'r', encoding='utf-8') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         data = json.load(file)
     time.sleep(0.8)
     return data
@@ -23,9 +23,9 @@ def filter_data(data):
     :param data:
     :return: data
     """
-    data = [x for x in data if 'state' in x and x['state'] == 'EXECUTED']
+    filtered_data = [x for x in data if 'state' in x and x['state'] == 'EXECUTED']
     time.sleep(0.8)
-    return data
+    return filtered_data
 
 
 def sorted_key(x):
@@ -44,9 +44,9 @@ def sort_data(data):
     :param data:
     :return: data[:5]
     """
-    data = sorted(data, key=sorted_key, reverse=True)
+    sorted_data = sorted(data, key=sorted_key, reverse=True)
     time.sleep(0.8)
-    return data[:5]
+    return sorted_data[:5]
 
 
 def format_data(data):

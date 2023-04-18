@@ -1,25 +1,26 @@
-from utils import *
+from project.src.utils import get_data, filter_data, sort_data, format_data
 
 
 def main():
     print('Получение данных из файла...', end='')
-    data = get_data()
+    data = get_data('operations.json')
+    print(data)
     if data:
         print('\n---Данные получены---\n')
 
     print('Фильтрация данных...', end='')
-    data = filter_data(data)
-    if data:
+    filterer = filter_data(data)
+    if filterer:
         print('\n---Данные отфильтрованы---\n')
 
     print('Сортировка данных...', end='')
-    data = sort_data(data)
-    if data:
+    sorter = sort_data(data)
+    if sorter:
         print('\n---Данные отсортированы---')
 
-    data = format_data(data)
+    formatter = format_data(data)
 
-    for row in data:
+    for row in formatter:
         print(row)
 
 
