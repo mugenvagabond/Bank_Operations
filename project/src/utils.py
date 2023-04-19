@@ -3,13 +3,13 @@ from datetime import datetime
 import time
 
 
-def get_data():
+def get_data(filename):
     """
     Функция открывает json файл и преобразует данные из него в формате списка
     в переменную
     :return: data
     """
-    with open('operations.json', 'r', encoding='utf-8') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         data = json.load(file)
     time.sleep(0.8)
     return data
@@ -77,8 +77,8 @@ def format_data(data):
         recipient_info = f"{recipient_bill[:4]} {recipient_bill[4:6]}** **** {recipient_bill[-4:]}"
 
         formatted_data.append(f"""
-        {date} {description}
-        {sender_info} {sender_bill} {from_arrow} {recipient_info}
-        {amount} {currency} """)
+{date} {description}
+{sender_info} {sender_bill} {from_arrow} {recipient_info}
+{amount} {currency} """)
     return formatted_data
 

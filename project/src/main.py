@@ -1,9 +1,9 @@
-from utils import *
+from project.src.utils import get_data, filter_data, sort_data, format_data
 
 
 def main():
     print('Получение данных из файла...', end='')
-    data = get_data()
+    data = get_data('operations.json')
     if data:
         print('\n---Данные получены---\n')
 
