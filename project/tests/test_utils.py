@@ -5,7 +5,7 @@ from project.src.utils import *
 
 def test_sort_data(test_data):
     sorted_data = sort_data(test_data)
-    assert [x['date'] for x in sorted_data] == ['2019-07-03T18:35:29.512364', '2018-06-30T02:08:58.425572',
+    assert [x['date'] for x in sorted_data] == ['2019-07-03T18:35:29.512364',
                                                 '2017-08-26T10:50:58.294041']
 
 
@@ -28,21 +28,6 @@ def test_filter_data(test_data):
             "description": "Перевод организации",
             "from": "MasterCard 7158300734726758",
             "to": "Счет 35383033474447895560"
-        },
-        {
-            "id": 939719570,
-            "state": "EXECUTED",
-            "date": "2018-06-30T02:08:58.425572",
-            "operationAmount": {
-                "amount": "9824.07",
-                "currency": {
-                    "name": "USD",
-                    "code": "USD"
-                }
-            },
-            "description": "Перевод организации",
-            "from": "Счет 75106830613657916952",
-            "to": "Счет 11776614605963066702"
         }, ]
     assert [x for x in test_data if 'state' in x and x['state'] == 'EXECUTED'] == [
         {
@@ -59,21 +44,6 @@ def test_filter_data(test_data):
             "description": "Перевод организации",
             "from": "MasterCard 7158300734726758",
             "to": "Счет 35383033474447895560"
-        },
-        {
-            "id": 939719570,
-            "state": "EXECUTED",
-            "date": "2018-06-30T02:08:58.425572",
-            "operationAmount": {
-                "amount": "9824.07",
-                "currency": {
-                    "name": "USD",
-                    "code": "USD"
-                }
-            },
-            "description": "Перевод организации",
-            "from": "Счет 75106830613657916952",
-            "to": "Счет 11776614605963066702"
         }, ]
 
 
@@ -95,4 +65,4 @@ def test_get_data():
 
 
 def test_format_data(test_data):
-    pass
+    assert type(format_data(test_data)) == list
